@@ -1,0 +1,27 @@
+{
+    "name": "test-doc-workshop",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/fac-32/pet-shelter.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fac-32/pet-shelter/issues"
+    },
+    "homepage": "https://github.com/fac-32/pet-shelter#readme",
+    "description": "",
+    "dependencies": {
+        "express": "^5.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.11",
+        "prettier": "3.6.2"
+    }
+}
