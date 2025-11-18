@@ -49,7 +49,6 @@
                     {
                       "name": "Oscar",
                       "species": "Cat",
-                      "age": 1,
                       "state": "rescued"
                     }
                   ]
@@ -102,8 +101,8 @@
             "format": "int32"
           },
           "state": {
-            "type": "string",
-            "description": "Status of the animal (e.g., rescued, adopted)"
+            "type": "boolean",
+            "description": "Status of the animal (adopted or not)"
           }
         }
       }
