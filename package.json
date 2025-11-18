@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "vitest",
         "dev": "nodemon server.ts",
         "dev-w-flag": "node --experimental-strip-types server.ts"
     },
@@ -19,11 +19,13 @@
     "homepage": "https://github.com/fac-32/pet-shelter#readme",
     "description": "",
     "dependencies": {
-        "express": "^5.1.0"
+        "express": "^5.1.0",
+        "supertest": "^7.1.4"
     },
     "devDependencies": {
         "@types/express": "^5.0.5",
         "nodemon": "^3.1.11",
-        "prettier": "3.6.2"
+        "prettier": "3.6.2",
+        "vitest": "^4.0.10"
     }
 }
