@@ -1,0 +1,32 @@
+### Get all pets
+GET http://localhost:3000/
+
+###
+
+### Adopt Leo the lion
+PUT http://localhost:3000/pets/lion1/adopt
+
+###
+
+### Adopt Simba the lion
+PUT http://localhost:3000/pets/lion2/adopt
+
+###
+
+### Adopt Firulais the dog
+PUT http://localhost:3000/pets/dog2/adopt
+
+###
+
+### Adopt Tom the cat
+PUT http://localhost:3000/pets/cat2/adopt
+
+###
+
+### Try to adopt an already adopted pet (Rex - should fail with 400)
+PUT http://localhost:3000/pets/dog1/adopt
+
+###
+
+### Try to adopt a non-existent pet (should return 404)
+PUT http://localhost:3000/pets/elephant1/adopt
