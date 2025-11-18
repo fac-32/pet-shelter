@@ -1,9 +1,9 @@
 {
-  "lion1": { "name": "Leo", "species": "Lion", "age": 5, "state": "rescued" },
-  "dog1": { "name": "Rex", "species": "Dog", "age": 7, "state": "adopted" },
-  "cat1": { "name": "Mimi", "species": "Cat", "age": 3, "state": "rescued" },
-  "lion2": { "name": "Simba", "species": "Lion", "age": 5, "state": "rescued" },
-  "dog2": { "name": "Firulais", "species": "Dog", "age": 7, "state": "rescued" },
-  "cat2": { "name": "Tom", "species": "Cat", "age": 3, "state": "rescued" }
+  "1": { "name": "Leo", "species": "Lion", "age": 5, "state": "rescued" },
+  "2": { "name": "Rex", "species": "Dog", "age": 7, "state": "adopted" },
+  "3": { "name": "Mimi", "species": "Cat", "age": 3, "state": "rescued" },
+  "4": { "name": "Simba", "species": "Lion", "age": 5, "state": "rescued" },
+  "5": { "name": "Firulais", "species": "Dog", "age": 7, "state": "rescued" },
+  "6": { "name": "Tom", "species": "Cat", "age": 3, "state": "rescued" }
 }
 
