@@ -1,0 +1,20 @@
+{
+    "data": [
+        { "name": "Leo", "species": "Lion", "age": 5, "state": "rescued" },
+        { "name": "Rex", "species": "Dog", "age": 7, "state": "adopted" },
+        { "name": "Mimi", "species": "Cat", "age": 3, "state": "rescued" },
+        {
+            "name": "Simba",
+            "species": "Lion",
+            "age": 5,
+            "state": "rescued"
+        },
+        {
+            "name": "Firulais",
+            "species": "Dog",
+            "age": 7,
+            "state": "rescued"
+        },
+        { "name": "Tom", "species": "Cat", "age": 3, "state": "rescued" }
+    ]
+}

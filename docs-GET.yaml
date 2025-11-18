@@ -1,0 +1,42 @@
+openapi: 3.0.4
+info:
+    title: Pet Shelter API
+    description: Day-workshop project
+    version: 1.0.0
+
+servers:
+    - url: http://localhost:3000
+      description: Default port listed in server
+
+paths:
+    /details/{state}:
+        get:
+            summary: Return an array of animals, with optional filter for adoption state
+            parameters:
+                - name: state
+                  in: path
+                  required: false
+                  schema:
+                      type: string # states other than 'rescued' or 'adopted' will return all animal records
+            responses:
+                '200':
+                    description: An array of objects
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: objects
+                                    properties:
+                                        name:
+                                            type: string
+                                            description: name of the animal
+                                        species:
+                                            type: string
+                                            description: broad description of species as in cat and dog
+                                        age:
+                                            type: int
+                                            description: age of the animal
+                                        state:
+                                            type: string
+                                            description: it's either "rescued" or "adopted"
