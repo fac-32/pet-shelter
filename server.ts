@@ -54,7 +54,12 @@ app.post('/pets/add', express.json(), (req, res) => {
     }
 });
 
-// Start the server
-app.listen(3000, () => {
-    console.log('Server running at http://localhost:3000');
-});
+// Export the app for testing
+export default app;
+
+// Start the server only when this file is run directly (not imported)
+if (import.meta.url === `file://${process.argv[1].replace(/\\/g, '/')}`) {
+    app.listen(3000, () => {
+        console.log('Server running at http://localhost:3000');
+    });
+}
