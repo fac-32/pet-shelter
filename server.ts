@@ -1,6 +1,11 @@
 import express from 'express';
 const app = express();
 import animalsData from './DummyData.json' with { type: "json" }; // static import with assertion
+import swaggerUi from 'swagger-ui-express';
+import addPetsDoc from './docs/addPetsDoc.json' with { type: 'json' };
+
+// Setup Swagger UI for API documentation
+app.use('/add-pets-docs', swaggerUi.serve, swaggerUi.setup(addPetsDoc));
 
 // Define TypeScript interfaces for better type checking
 interface Animal {
@@ -21,7 +26,7 @@ app.get('/', (req, res) => {
     res.send(animalsData);
 });
 
-// Route to add a new animal (example)
+// Route to add a new animal
 app.post('/pets/add', express.json(), (req, res) => {
     const newAnimals = req.body;
     // loop through the newAnimals and add each to animalsData

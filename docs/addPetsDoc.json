@@ -1,0 +1,112 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pet Adoption API",
+    "version": "1.0.0",
+    "description": "API to add new pets to the database, supports single or multiple pet records"
+  },
+  "paths": {
+    "/pets/add": {
+      "post": {
+        "summary": "Add new pet(s)",
+        "description": "Add one or more new animals to the system. Accepts either a single animal object or an array of animals.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Animal"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Animal"
+                    }
+                  }
+                ]
+              },
+              "examples": {
+                "single": {
+                  "summary": "Single animal object",
+                  "value": {
+                    "name": "Bella",
+                    "species": "Dog",
+                    "age": 4,
+                    "state": "rescued"
+                  }
+                },
+                "multiple": {
+                  "summary": "Multiple animals",
+                  "value": [
+                    {
+                      "name": "Bella",
+                      "species": "Dog",
+                      "age": 4,
+                      "state": "rescued"
+                    },
+                    {
+                      "name": "Oscar",
+                      "species": "Cat",
+                      "age": 1,
+                      "state": "rescued"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "New animal(s) successfully added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "added": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "$ref": "#/components/schemas/Animal"
+                      },
+                      "description": "Map of generated IDs to added animal objects"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Animal": {
+        "type": "object",
+        "required": ["name", "species", "age", "state"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "state": {
+            "type": "string",
+            "description": "Status of the animal (e.g., rescued, adopted)"
+          }
+        }
+      }
+    }
+  }
+}
