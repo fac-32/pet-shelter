@@ -1,8 +1,12 @@
-const express = require('express');
+import express from 'express';
 const app = express();
+import animalsData from './DummyData.json' with { type: "json" }; // static import with assertion
+
+
+// type animals: AnimalRecord = animalsData;
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send(animalsData);
 });
 
 app.listen(3000, () => {
